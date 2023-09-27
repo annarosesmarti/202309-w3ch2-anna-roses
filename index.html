@@ -9,39 +9,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
-  <script src="/js/index.js"></script>
+  <script type="module" src="/js/index.js"></script>
   <title>Game of Cards</title>
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-  <class class="main-container">
+  <div class="main-container">
     <header>
       <h1 class="title">Greater or smaller</h1>
     </header>
     <main>
-      <div class="cards-container">
+      <div class="cards-container hidden">
         <div class="card card-game">
-          <span class="suit-top-left suit-card-game">♥️</span>
-          <span class="value value-card-game">Q</span>
-          <span class="suit-bottom-right suit-card-game">♥️</span>
+          <span class="suit-top-left card-game-suit-top"></span>
+          <span class="value card-game-value"></span>
+          <span class="suit-bottom-right card-game-suit-bottom"></span>
         </div>
         <div class="card card-player">
-          <span class="value question-mark-card-two">?</span>
-          <span class="suit-card-two suit-top-left hidden">♣️</span>
-          <span class="value value-card-two hidden">J</span>
-          <span class="suit-card-two suit-bottom-right hidden">♣️</span>
+          <span class="value card-player-question-mark">?</span>
+          <span class="suit-top-left card-player-suit-top hidden"></span>
+          <span class="value card-player-value hidden"></span>
+          <span class="suit-bottom-right card-player-suit-bottom hidden"></span>
         </div>
       </div>
+
       <div class="button-start-container">
-        <button class="button button-start hidden" type="button">Start</button>
+        <button class="button button-start" type="button">Start</button>
       </div>
       <div class="button-section">
-        <button class="button button-greater" type="button">Greater</button>
-        <button class="button button-smaller" type="button">Smaller</button>
+        <span class="display-text hidden"></span>
+        <button class="button button-greater hidden" type="button">Greater</button>
+        <button class="button button-smaller hidden" type="button">Smaller</button>
       </div>
     </main>
-  </class>
+  </div>
 </body>
 
 </html>
