@@ -7,14 +7,41 @@
   <meta name="description" content="Game of Cards">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <script src="/js/index.js"></script>
   <title>Game of Cards</title>
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
-
+  <class class="main-container">
+    <header>
+      <h1 class="title">Greater or smaller</h1>
+    </header>
+    <main>
+      <div class="cards-container">
+        <div class="card card-game">
+          <span class="suit-top-left suit-card-game">♥️</span>
+          <span class="value value-card-game">Q</span>
+          <span class="suit-bottom-right suit-card-game">♥️</span>
+        </div>
+        <div class="card card-player">
+          <span class="value question-mark-card-two">?</span>
+          <span class="suit-card-two suit-top-left hidden">♣️</span>
+          <span class="value value-card-two hidden">J</span>
+          <span class="suit-card-two suit-bottom-right hidden">♣️</span>
+        </div>
+      </div>
+      <div class="button-start-container">
+        <button class="button button-start hidden" type="button">Start</button>
+      </div>
+      <div class="button-section">
+        <button class="button button-greater" type="button">Greater</button>
+        <button class="button button-smaller" type="button">Smaller</button>
+      </div>
+    </main>
+  </class>
 </body>
 
 </html>

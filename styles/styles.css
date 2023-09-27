@@ -1,0 +1,100 @@
+:root {
+  --main-color: white;
+  --secondary-color: #025136;
+  --tertiary-color: black;
+  --main-font: "Inclusive Sans", sans-serif;
+  --card-font-size: 2.7rem;
+  --title-font-size: 2.5rem;
+  --button-font-size: 1.5rem;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--secondary-color);
+  padding-bottom: 20px;
+}
+
+button {
+  font-family: inherit;
+}
+
+span {
+  font-family: inherit;
+}
+
+.main-container {
+  font-family: var(--main-font);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.title {
+  color: var(--main-color);
+  font-size: var(--title-font-size);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5%;
+  padding-top: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  border: 1px solid;
+  border-color: var(--main-color);
+  font-size: var(--card-font-size);
+  height: 20rem;
+  width: 15rem;
+  border-radius: 1rem;
+  background-color: var(--main-color);
+}
+
+.suit-top-left {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.suit-bottom-right {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.value {
+  font-size: 5rem;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  padding: 10px 40px;
+  margin-bottom: 1rem;
+  border: 1px solid;
+  border-color: var(--main-color);
+  border-radius: 1rem;
+  background-color: var(--main-color);
+  box-shadow: -4px 4px 4px #012d1e;
+}
