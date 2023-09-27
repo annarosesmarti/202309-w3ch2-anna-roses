@@ -23,3 +23,8 @@ const deckGenerator = () => {
   });
   return cardsDeck;
 };
+
+const randomCard = () =>
+  deckGenerator()[Math.floor(Math.random() * deckGenerator().length)];
+
+console.log(randomCard());
