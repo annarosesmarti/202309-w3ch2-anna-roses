@@ -30,6 +30,7 @@ span {
 
 .main-container {
   font-family: var(--main-font);
+  padding: 10px 20px;
 }
 
 .hidden {
@@ -40,7 +41,7 @@ span {
   color: var(--main-color);
   font-size: var(--title-font-size);
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.2rem;
 }
 
 .cards-container {
@@ -49,15 +50,11 @@ span {
   justify-content: center;
   align-items: flex-start;
   gap: 5%;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 .card {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  align-items: center;
-  justify-items: center;
+  position: relative;
   border: 1px solid;
   border-color: var(--main-color);
   font-size: var(--card-font-size);
@@ -68,30 +65,23 @@ span {
 }
 
 .suit-top-left {
-  grid-column: 1;
-  grid-row: 1;
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
 }
 
 .suit-bottom-right {
-  grid-column: 3;
-  grid-row: 3;
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
 }
 
 .value {
   font-size: 5rem;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.display-text {
-  color: var(--main-color);
-  padding: 10px;
-}
-
-.button-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .button {
@@ -102,4 +92,28 @@ span {
   border-radius: 1rem;
   background-color: var(--main-color);
   box-shadow: -4px 4px 4px #012d1e;
+  width: 10rem;
+}
+
+.button-start-container {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.display-text {
+  color: var(--main-color);
+  text-align: center;
+  height: 25px;
+}
+
+.diplay-container {
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 40px;
+  margin-bottom: 1rem;
 }

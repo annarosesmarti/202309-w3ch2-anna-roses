@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Game of Cards">
+  <meta name="description" content="Game of Cards, guess if the card is greater or smaller to win">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/styles.css">
-  <script type="module" src="/js/index.js"></script>
+  <script src="/js/index.js" defer></script>
+  <script src="/js/validation.js" defer></script>
   <title>Game of Cards</title>
   <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 </head>
@@ -22,25 +23,27 @@
     <main>
       <div class="cards-container hidden">
         <div class="card card-game">
-          <span class="suit-top-left card-game-suit-top"></span>
+          <span class="suit-top-left card-game-suit"></span>
           <span class="value card-game-value"></span>
-          <span class="suit-bottom-right card-game-suit-bottom"></span>
+          <span class="suit-bottom-right card-game-suit"></span>
         </div>
         <div class="card card-player">
           <span class="value card-player-question-mark">?</span>
-          <span class="suit-top-left card-player-suit-top hidden"></span>
+          <span class="suit-top-left card-player-suit hidden"></span>
           <span class="value card-player-value hidden"></span>
-          <span class="suit-bottom-right card-player-suit-bottom hidden"></span>
+          <span class="suit-bottom-right card-player-suit hidden"></span>
         </div>
       </div>
-
       <div class="button-start-container">
         <button class="button button-start" type="button">Start</button>
       </div>
-      <div class="button-section">
+      <div class="diplay-container">
         <span class="display-text hidden"></span>
+      </div>
+      <div class="diplay-container">
         <button class="button button-greater hidden" type="button">Greater</button>
         <button class="button button-smaller hidden" type="button">Smaller</button>
+        <button class="button button-restart" type="button">Start again</button>
       </div>
     </main>
   </div>
