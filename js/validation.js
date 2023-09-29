@@ -14,53 +14,109 @@ const questionCardPlayer = document.querySelector(".card-player-question-mark");
 
 const displayText = document.querySelector(".display-text");
 
-const visibleRandomCardGame = getRandomCard();
-const hiddenRandomCardPlayer = getRandomCard();
+let visibleRandomCardGame;
+let hiddenRandomCardPlayer;
 
-startButton.addEventListener("click", () => {
-  startButton.classList.add("hidden");
-  cardsDisplay.classList.remove("hidden");
-  greaterButton.classList.remove("hidden");
-  smallerButton.classList.remove("hidden");
+const compareCards = () => {
+  if (visibleRandomCardGame.score < hiddenRandomCardPlayer.score) {
+    return "greater";
+  } else if (visibleRandomCardGame.score > hiddenRandomCardPlayer.score) {
+    return "smaller";
+  }
+};
 
-  cardGameSuit.forEach((suit) => {
-    suit.textContent = `${visibleRandomCardGame.suit}`;
+const checkCardsResult = (choice) => {
+  if (compareCards() === choice) {
+    displayText.textContent = `Congratulations, ${choice}!! 🥳 🎉`;
+  } else {
+    displayText.textContent = `oooh, ${choice}, try again!! 😔`;
+  }
+};
+
+const startTimeout = () => {
+  setTimeout(() => {
+    startButton.classList.toggle("hidden");
+    cardsDisplay.classList.toggle("hidden");
+    displayText.classList.toggle("hidden");
+
+    questionCardPlayer.classList.toggle("hidden");
+    cardPlayerValue.classList.toggle("hidden");
+
+    cardPlayerSuit.forEach((suit) => {
+      suit.classList.toggle("hidden");
+    });
+
+    startGame();
+  }, "3000");
+};
+
+const startGame = () => {
+  startButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    visibleRandomCardGame = getRandomCard();
+    hiddenRandomCardPlayer = getRandomCard();
+
+    startButton.classList.add("hidden");
+    cardsDisplay.classList.remove("hidden");
+    greaterButton.classList.remove("hidden");
+    smallerButton.classList.remove("hidden");
+
+    cardGameSuit.forEach((suit) => {
+      suit.textContent = `${visibleRandomCardGame.suit}`;
+    });
+
+    cardGameValue.textContent = `${visibleRandomCardGame.value}`;
   });
 
-  cardGameValue.textContent = `${visibleRandomCardGame.value}`;
-});
+  greaterButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    questionCardPlayer.classList.add("hidden");
+    cardPlayerValue.classList.remove("hidden");
 
-greaterButton.addEventListener("click", () => {
-  questionCardPlayer.classList.add("hidden");
-  cardPlayerValue.classList.remove("hidden");
+    cardPlayerSuit.forEach((suit) => {
+      suit.classList.remove("hidden");
+    });
 
-  cardPlayerSuit.forEach((suit) => {
-    suit.classList.remove("hidden");
+    cardPlayerSuit.forEach((suit) => {
+      suit.textContent = `${hiddenRandomCardPlayer.suit}`;
+    });
+
+    cardPlayerValue.textContent = `${hiddenRandomCardPlayer.value}`;
+
+    displayText.classList.remove("hidden");
+    greaterButton.classList.add("hidden");
+    smallerButton.classList.add("hidden");
+
+    checkCardsResult("greater");
+
+    startTimeout();
   });
 
-  cardPlayerSuit.forEach((suit) => {
-    suit.textContent = `${hiddenRandomCardPlayer.suit}`;
+  smallerButton.addEventListener("click", (event) => {
+    event.stopPropagation();
+    questionCardPlayer.classList.add("hidden");
+
+    cardPlayerSuit.forEach((suit) => {
+      suit.classList.remove("hidden");
+    });
+
+    cardPlayerValue.classList.remove("hidden");
+
+    cardPlayerSuit.forEach((suit) => {
+      suit.textContent = `${hiddenRandomCardPlayer.suit}`;
+    });
+
+    cardPlayerValue.textContent = `${hiddenRandomCardPlayer.value}`;
+
+    displayText.classList.remove("hidden");
+    greaterButton.classList.add("hidden");
+    smallerButton.classList.add("hidden");
+
+    checkCardsResult("smaller");
+
+    startTimeout();
   });
+};
 
-  cardPlayerValue.textContent = `${hiddenRandomCardPlayer.value}`;
-
-  checkCardsResult("greater");
-});
-
-smallerButton.addEventListener("click", () => {
-  questionCardPlayer.classList.add("hidden");
-
-  cardPlayerSuit.forEach((suit) => {
-    suit.classList.remove("hidden");
-  });
-
-  cardPlayerValue.classList.remove("hidden");
-
-  cardPlayerSuit.forEach((suit) => {
-    suit.textContent = `${hiddenRandomCardPlayer.suit}`;
-  });
-
-  cardPlayerValue.textContent = `${hiddenRandomCardPlayer.value}`;
-
-  checkCardsResult("smaller");
-});
+startGame();
