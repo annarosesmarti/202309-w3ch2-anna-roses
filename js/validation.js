@@ -29,7 +29,7 @@ const checkCardsResult = (choice) => {
   if (compareCards() === choice) {
     displayText.textContent = `Congratulations, ${choice}!! 🥳 🎉`;
   } else {
-    displayText.textContent = `oooh, ${choice}, try again!! 😔`;
+    displayText.textContent = `ooh, it isn't ${choice}, try again!! 😔`;
   }
 };
 
