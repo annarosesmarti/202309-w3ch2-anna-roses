@@ -27,10 +27,6 @@ button {
   font-family: inherit;
 }
 
-span {
-  font-family: inherit;
-}
-
 .main-container {
   font-family: var(--main-font);
   padding: 2px 20px;
@@ -96,6 +92,12 @@ span {
   background-color: var(--main-color);
   box-shadow: -4px 4px 4px #012d1e;
   width: min-content 10rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--tertiary-color);
+  color: var(--main-color);
 }
 
 .button-start-container {
